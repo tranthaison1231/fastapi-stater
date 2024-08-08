@@ -18,3 +18,6 @@ migration-generate:
 
 dev: 
 	cd app && python main.py 
+
+docker-api:
+	docker-compose up api

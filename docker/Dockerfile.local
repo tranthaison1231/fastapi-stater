@@ -1,1 +1,21 @@
-False
+FROM python:3.12.3
+
+# set working directory
+WORKDIR /app
+
+
+# Setup virtual env
+RUN pip install virtualenv
+RUN virtualenv .venv;
+RUN echo "source .venv/bin/activate" >> $HOME/.bashrc;
+
+COPY ../requirements/ /requirements
+
+# install python dependencies
+RUN pip install --upgrade pip
+RUN pip install -r /requirements/base.txt
+
+# copy project
+COPY . /app
+
+
