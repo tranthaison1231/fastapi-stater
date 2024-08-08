@@ -4,5 +4,14 @@ install:
 install-no-cache:
 	pip install --no-cache-dir -r requirements.txt
 
+migrations-up:
+	alembic upgrade heads
+
+migrations-down:
+	alembic downgrade base
+
+migration-create:
+	alembic revision -m "$(name)"
+
 dev: 
-	cd src && uvicorn main:app --reload
+	uvicorn app.main:app --reload
