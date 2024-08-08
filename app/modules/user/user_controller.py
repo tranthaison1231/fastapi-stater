@@ -9,4 +9,5 @@ router = APIRouter()
 @router.get("/")
 async def get_users(db: db_dependency):
     user_service = UserService(db=db)
-    return await user_service.get_users()
+    users = await user_service.get_users()
+    return {"data": users}

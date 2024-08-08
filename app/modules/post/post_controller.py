@@ -1,17 +1,23 @@
 from fastapi import APIRouter
+from modules.post.post_schema import GetPostsResponse, PostSchema
 from modules.post.post_service import PostService
 from db.dependency import db_dependency
 
 router = APIRouter()
 
 
-@router.get("/")
+@router.get("/", response_model=GetPostsResponse)
 async def get_posts(db: db_dependency):
     post_service = PostService(db=db)
 
     posts = await post_service.get_posts()
 
-    return posts
+    posts_data: list[PostSchema] = []
+
+    for post in posts:
+        posts_data.append(PostSchema(title=post.title, content=post.content))
+
+    return GetPostsResponse(data=posts_data)
 
 
 @router.post("/")

@@ -1,11 +1,14 @@
 from pydantic import BaseModel
 
-from db.models.post import Post
+
+class PostSchema(BaseModel):
+    title: str
+    content: str
 
 
 class GetPostsResponse(BaseModel):
-    posts: list[Post]
+    data: list[PostSchema]
 
 
 class CreatePostResponse(BaseModel):
-    post: Post
+    data: PostSchema
