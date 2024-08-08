@@ -1,5 +1,6 @@
+from modules.user.user_schema import UserRequest
 from db.models import User
-from db.dependency import db_dependency
+from db.dependencies import db_dependency
 
 
 class UserService:
@@ -11,3 +12,24 @@ class UserService:
 
         return users
 
+    async def get_user_by_email(self, email: str):
+        user = self.db.query(User).filter(User.email == email).first()
+
+        return user
+
+    async def get_user(self, id: str):
+        user = self.db.query(User).filter(User.id == id).first()
+
+        return user
+
+    async def create_user(self, user_request: UserRequest):
+        user = User(
+            email=user_request.email,
+            password=user_request.password,
+            name=user_request.name,
+        )
+
+        self.db.add(user)
+        self.db.commit()
+
+        return user

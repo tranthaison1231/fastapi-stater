@@ -1,27 +1,20 @@
 from fastapi import APIRouter
-from modules.post.post_schema import GetPostsResponse, PostSchema
+from modules.post.post_schema import PostRequest, PostResponse
 from modules.post.post_service import PostService
-from db.dependency import db_dependency
+from db.dependencies import db_dependency
 
-router = APIRouter()
+router = APIRouter(tags=["Post"])
 
 
-@router.get("/", response_model=GetPostsResponse)
+@router.get("/", response_model=list[PostResponse])
 async def get_posts(db: db_dependency):
     post_service = PostService(db=db)
 
-    posts = await post_service.get_posts()
-
-    posts_data: list[PostSchema] = []
-
-    for post in posts:
-        posts_data.append(PostSchema(title=post.title, content=post.content))
-
-    return GetPostsResponse(data=posts_data)
+    return await post_service.get_posts()
 
 
-@router.post("/")
-async def create_post(title: str, content: str, db: db_dependency):
+@router.post("/", response_model=PostResponse)
+async def create_post(post_request: PostRequest, db: db_dependency):
     post_service = PostService(db=db)
 
-    return await post_service.create_post(title=title, content=content)
+    return await post_service.create_post(post_request=post_request)

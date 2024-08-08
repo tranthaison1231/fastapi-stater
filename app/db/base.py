@@ -1,12 +1,30 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import declarative_base, sessionmaker
-from sqlalchemy.sql.schema import MetaData
-from core.config import settings
+from datetime import UTC, datetime
+from uuid import uuid4
+from sqlalchemy.types import TIMESTAMP
+from sqlalchemy.orm import (
+    DeclarativeBase,
+    Mapped,
+    mapped_column,
+)
 
-engine = create_engine(settings.DATABASE_URL)
 
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
-metadata = MetaData()
-
-Base = declarative_base(metadata=metadata)
+class Base(DeclarativeBase):
+    __abstract__ = True
+    id: Mapped[str] = mapped_column(
+        primary_key=True,
+        default=lambda: uuid4().hex,
+        sort_order=-3,
+    )
+    created_at: Mapped[datetime] = mapped_column(
+        default=lambda: datetime.now(UTC),
+        nullable=False,
+        sort_order=-2,
+        type_=TIMESTAMP(timezone=True),
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        default=lambda: datetime.now(UTC),
+        onupdate=lambda: datetime.now(UTC),
+        nullable=False,
+        sort_order=-1,
+        type_=TIMESTAMP(timezone=True),
+    )

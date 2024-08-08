@@ -1,13 +1,20 @@
 from fastapi import APIRouter
-from db.dependency import db_dependency
+from modules.user.user_schema import UserResponse
+from db.dependencies import db_dependency
 
 from modules.user.user_service import UserService
 
-router = APIRouter()
+router = APIRouter(tags=["User"])
 
 
-@router.get("/")
+@router.get("/", response_model=list[UserResponse])
 async def get_users(db: db_dependency):
     user_service = UserService(db=db)
-    users = await user_service.get_users()
-    return {"data": users}
+    return await user_service.get_users()
+
+
+@router.get("/{id}")
+async def get_user_by_id(id: str, db: db_dependency):
+    user_service = UserService(db=db)
+    user = await user_service.get_user(id=id)
+    return {"data": user}

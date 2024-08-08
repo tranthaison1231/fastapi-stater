@@ -1,5 +1,6 @@
+from modules.post.post_schema import PostRequest
 from db.models import Post
-from db.dependency import db_dependency
+from db.dependencies import db_dependency
 
 
 class PostService:
@@ -9,8 +10,8 @@ class PostService:
     async def get_posts(self):
         return self.db.query(Post).all()
 
-    async def create_post(self, title: str, content: str):
-        post = Post(title=title, content=content)
+    async def create_post(self, post_request: PostRequest):
+        post = Post(title=post_request.title, content=post_request.content)
         self.db.add(post)
         self.db.commit()
 
