@@ -1,9 +1,20 @@
 FROM python:3.12.3
 
-RUN mkdir /backend
-WORKDIR /backend
+# set working directory
+WORKDIR /usr/src/app
 
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
-COPY . .
+# install system dependencies
+RUN apt-get update && apt-get -y install libpq-dev gcc
+
+# add app
+COPY ../app/ .
+
+# install python dependencies
+RUN pip install --upgrade pip
+RUN pip install -r requirements/base.txt
+
+CMD ./scripts/docker-entrypoint.sh

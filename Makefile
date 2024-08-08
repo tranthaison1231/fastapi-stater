@@ -1,17 +1,20 @@
 install:
-	pip install -r requirements.txt
+	pip install -r requirements/base.txt
 
 install-no-cache:
-	pip install --no-cache-dir -r requirements.txt
+	pip install --no-cache-dir -r requirements/base.txt
 
-migrations-up:
-	alembic upgrade heads
+migration-up:
+	cd app && alembic upgrade heads
 
-migrations-down:
-	alembic downgrade base
+migration-down:
+	cd app && alembic downgrade base
 
 migration-create:
-	alembic revision -m "$(name)"
+	cd app && alembic revision -m "$(name)"
+
+migration-generate:
+	cd app && alembic revision --autogenerate -m "$(name)"
 
 dev: 
-	uvicorn app.main:app --reload
+	cd app && python main.py 
