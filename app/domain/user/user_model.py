@@ -3,13 +3,6 @@ from infrastructure.database.base import Base
 import bcrypt  # type: ignore
 
 
-class Post(Base):
-    __tablename__ = "posts"
-
-    title: Mapped[str] = mapped_column()
-    content: Mapped[str] = mapped_column()
-
-
 class User(Base):
     __tablename__ = "users"
 

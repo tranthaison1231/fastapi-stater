@@ -1,5 +1,5 @@
 from domain.post.post_schema import PostRequest
-from infrastructure.models import Post
+from domain.post.post_model import Post
 from infrastructure.database.dependencies import db_dependency
 
 

@@ -1,5 +1,5 @@
 from domain.user.user_schema import UserRequest
-from infrastructure.models import User
+from domain.user.user_model import User
 from infrastructure.database.dependencies import db_dependency
 
 
