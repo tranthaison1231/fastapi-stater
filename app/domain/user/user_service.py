@@ -18,3 +18,7 @@ class UserService:
 
     async def create_user(self, user_request: UserRequest):
         return await self.user_repository.create_user(user_request=user_request)
+
+
+def get_user_service(db: db_dependency):
+    return UserService(db=db)

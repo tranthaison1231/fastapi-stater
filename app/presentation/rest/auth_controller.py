@@ -1,18 +1,18 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from domain.user.user_schema import UserRequest, UserResponse
 from application.exceptions import conflict, not_found, unauthorized_bearer
-from domain.user.user_service import UserService
+from domain.user.user_service import UserService, get_user_service
 from domain.auth.auth_schema import LoginRequest, RegisterRequest
-from infrastructure.database.dependencies import db_dependency
 
 
 router = APIRouter(tags=["Auth"])
 
 
 @router.post("/login")
-async def login(login_request: LoginRequest, db: db_dependency):
-    user_service = UserService(db=db)
-
+async def login(
+    login_request: LoginRequest,
+    user_service: UserService = Depends(get_user_service),
+):
     user = await user_service.get_user_by_email(email=login_request.email)
 
     if not user:
@@ -27,9 +27,10 @@ async def login(login_request: LoginRequest, db: db_dependency):
 
 
 @router.post("/register", response_model=UserResponse)
-async def register(register_request: RegisterRequest, db: db_dependency):
-    user_service = UserService(db=db)
-
+async def register(
+    register_request: RegisterRequest,
+    user_service: UserService = Depends(get_user_service),
+):
     user = await user_service.get_user_by_email(email=register_request.email)
 
     if user:

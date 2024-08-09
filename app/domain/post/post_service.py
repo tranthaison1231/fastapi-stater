@@ -12,3 +12,7 @@ class PostService:
 
     async def create_post(self, post_request: PostRequest):
         return self.post_repository.create_post(post_request=post_request)
+
+
+def get_post_service(db: db_dependency):
+    return PostService(db=db)
