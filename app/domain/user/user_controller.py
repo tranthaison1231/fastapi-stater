@@ -1,8 +1,8 @@
 from fastapi import APIRouter
-from modules.user.user_schema import UserResponse
-from db.dependencies import db_dependency
+from domain.user.user_schema import UserResponse
+from infrastructure.database.dependencies import db_dependency
 
-from modules.user.user_service import UserService
+from domain.user.user_service import UserService
 
 router = APIRouter(tags=["User"])
 

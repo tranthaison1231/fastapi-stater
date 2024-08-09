@@ -1,7 +1,7 @@
 from fastapi import APIRouter
-from modules.post.post_schema import PostRequest, PostResponse
-from modules.post.post_service import PostService
-from db.dependencies import db_dependency
+from domain.post.post_schema import PostRequest, PostResponse
+from domain.post.post_service import PostService
+from infrastructure.database.dependencies import db_dependency
 
 router = APIRouter(tags=["Post"])
 

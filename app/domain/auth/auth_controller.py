@@ -1,9 +1,9 @@
 from fastapi import APIRouter
-from modules.user.user_schema import UserRequest, UserResponse
-from common.exceptions import conflict, not_found, unauthorized_bearer
-from modules.user.user_service import UserService
-from modules.auth.auth_schema import LoginRequest, RegisterRequest
-from db.dependencies import db_dependency
+from domain.user.user_schema import UserRequest, UserResponse
+from application.exceptions import conflict, not_found, unauthorized_bearer
+from domain.user.user_service import UserService
+from domain.auth.auth_schema import LoginRequest, RegisterRequest
+from infrastructure.database.dependencies import db_dependency
 
 
 router = APIRouter(tags=["Auth"])

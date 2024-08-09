@@ -1,9 +1,9 @@
-from modules.user.user_schema import UserRequest
-from db.models import User
-from db.dependencies import db_dependency
+from domain.user.user_schema import UserRequest
+from infrastructure.models import User
+from infrastructure.database.dependencies import db_dependency
 
 
-class UserService:
+class UserRepository:
     def __init__(self, db: db_dependency):
         self.db = db
 
@@ -12,7 +12,7 @@ class UserService:
 
         return users
 
-    async def get_user_by_email(self, email: str):
+    async def get_user_by_email(self, email: str) -> User | None:
         user = self.db.query(User).filter(User.email == email).first()
 
         return user

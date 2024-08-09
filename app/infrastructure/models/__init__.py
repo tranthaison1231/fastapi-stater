@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Mapped, mapped_column
-from common.helpers.hash import check_hash, get_hash
-from db.base import Base
+from infrastructure.database.base import Base
+import bcrypt  # type: ignore
 
 
 class Post(Base):
@@ -21,9 +21,15 @@ class User(Base):
     def password(self) -> str:
         return self._password
 
+    def get_hash(self, value: str) -> str:
+        return bcrypt.hashpw(value.encode("utf-8"), bcrypt.gensalt()).decode("utf-8")
+
+    def check_hash(self, value: str, hashed: str) -> bool:
+        return bcrypt.checkpw(value.encode("utf-8"), hashed.encode("utf-8"))
+
     @password.setter
     def password(self, password: str) -> None:
-        self._password = get_hash(password)
+        self._password = self.get_hash(password)
 
     def check_password(self, password: str) -> bool:
-        return check_hash(password, self.password)
+        return self.check_hash(password, self.password)

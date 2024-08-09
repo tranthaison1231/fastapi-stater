@@ -1,7 +1,7 @@
 from fastapi import APIRouter
-from modules.post.post_controller import router as post_router
-from modules.user.user_controller import router as user_router
-from modules.auth.auth_controller import router as auth_router
+from domain.post.post_controller import router as post_router
+from domain.user.user_controller import router as user_router
+from domain.auth.auth_controller import router as auth_router
 
 api_router = APIRouter()
 

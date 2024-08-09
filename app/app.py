@@ -1,4 +1,4 @@
-from modules.router import api_router
+from presentation.rest import api_router
 from fastapi import FastAPI
 from fastapi.responses import UJSONResponse
 from fastapi.middleware.cors import CORSMiddleware

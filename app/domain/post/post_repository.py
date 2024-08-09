@@ -1,9 +1,9 @@
-from modules.post.post_schema import PostRequest
-from db.models import Post
-from db.dependencies import db_dependency
+from domain.post.post_schema import PostRequest
+from infrastructure.models import Post
+from infrastructure.database.dependencies import db_dependency
 
 
-class PostService:
+class PostRepository:
     def __init__(self, db: db_dependency):
         self.db = db
 
