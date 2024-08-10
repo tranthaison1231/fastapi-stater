@@ -16,6 +16,15 @@ migration-create:
 migration-generate:
 	cd app && alembic revision --autogenerate -m "$(name)"
 
+lint:
+	ruff check
+
+lint-fix:
+	ruff check --fix
+
+format:
+	ruff format
+
 dev: 
 	cd app && python main.py 
 

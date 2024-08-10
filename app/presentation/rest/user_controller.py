@@ -1,17 +1,17 @@
 from fastapi import APIRouter, Depends
 from domain.user.user_schema import UserResponse
 
-from domain.user.user_service import UserService, get_user_service
+from application.use_cases.user.get_user import GetUserUseCase
+from application.use_cases.user.get_users import GetUsersUseCase
 
 router = APIRouter(tags=["User"])
 
 
 @router.get("/", response_model=list[UserResponse])
-async def get_users(user_service: UserService = Depends(get_user_service)):
-    return await user_service.get_users()
+async def get_users(get_users_use_case: GetUsersUseCase = Depends()):
+    return await get_users_use_case.excute()
 
 
 @router.get("/{id}")
-async def get_user(id: str, user_service: UserService = Depends(get_user_service)):
-    user = await user_service.get_user(id=id)
-    return {"data": user}
+async def get_user(id: str, get_user_use_case: GetUserUseCase = Depends()):
+    return await get_user_use_case.excute(id=id)

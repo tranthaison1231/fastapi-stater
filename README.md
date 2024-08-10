@@ -9,6 +9,7 @@ This project provides a foundational structure for building RESTful APIs using F
 - 🚀FastAPI: High-performance, asynchronous web framework for building APIs.
 - 🛡️Sqlalchemy: Robust ORM for interacting with databases.
 - 📘Alembic: Powerful tool for managing database schema migrations.
+- 🛠️Ruff: An extremely fast Python linter and code formatter, written in Rust.
 
 ## Setup
 
