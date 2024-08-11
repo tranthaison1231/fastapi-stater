@@ -22,6 +22,9 @@ lint:
 lint-fix:
 	ruff check --fix
 
+check-types:
+		pyright
+
 format:
 	ruff format
 

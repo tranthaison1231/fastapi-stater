@@ -1,0 +1,22 @@
+default_stages: [pre-commit]
+default_install_hook_types: [pre-commit, commit-msg]
+repos:
+  - repo: local
+    hooks:
+      - id: check-lint
+        name: Check Lint
+        entry: make
+        args: ["lint"]
+        language: python
+
+      - id: check-type
+        name: Check Type
+        entry: make
+        args: ["check-types"]
+        language: python
+
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v2.4.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]

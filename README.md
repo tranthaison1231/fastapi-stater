@@ -10,6 +10,7 @@ This project provides a foundational structure for building RESTful APIs using F
 - 🛡️Sqlalchemy: Robust ORM for interacting with databases.
 - 📘Alembic: Powerful tool for managing database schema migrations.
 - 🛠️Ruff: An extremely fast Python linter and code formatter, written in Rust.
+- 🔦Pyright: Static Type Checker for Python
 
 ## Setup
 
