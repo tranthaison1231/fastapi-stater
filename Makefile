@@ -5,16 +5,19 @@ install-no-cache:
 	pip install --no-cache-dir -r requirements/base.txt
 
 migration-up:
-	cd app && alembic upgrade heads
+	alembic upgrade heads
 
 migration-down:
-	cd app && alembic downgrade base
+	alembic downgrade base
 
 migration-create:
-	cd app && alembic revision -m "$(name)"
+	alembic revision -m "$(name)"
+
+migration-history:
+	alembic history
 
 migration-generate:
-	cd app && alembic revision --autogenerate -m "$(name)"
+	alembic revision --autogenerate -m "$(name)"
 
 lint:
 	ruff check
@@ -22,14 +25,17 @@ lint:
 lint-fix:
 	ruff check --fix
 
+test:
+	pytest
+
 check-types:
-		pyright
+	pyright
 
 format:
 	ruff format
 
 dev: 
-	cd app && python main.py 
+	uvicorn app.main:app --reload 
 
 docker-api:
 	docker-compose up api

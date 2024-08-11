@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Mapped, mapped_column
-from infrastructure.database.base import Base
+from app.infrastructure.database.base import Base
 
 
 class Post(Base):

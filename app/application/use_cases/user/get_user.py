@@ -1,5 +1,5 @@
 from fastapi import Depends
-from domain.user.user_repository import UserRepository
+from app.domain.user.user_repository import UserRepository
 
 
 class GetUserUseCase:

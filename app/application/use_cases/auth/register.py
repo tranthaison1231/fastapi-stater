@@ -1,8 +1,8 @@
 from fastapi import Depends
-from domain.user.user_repository import UserRepository
-from application.exceptions import conflict
-from domain.auth.auth_schema import RegisterRequest
-from domain.user.user_schema import UserRequest
+from app.domain.user.user_repository import UserRepository
+from app.application.exceptions import conflict
+from app.domain.auth.auth_schema import RegisterRequest
+from app.domain.user.user_schema import UserRequest
 
 
 class RegisterUseCase:

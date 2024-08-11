@@ -1,7 +1,7 @@
 from fastapi import Depends
-from domain.user.user_repository import UserRepository
-from application.exceptions import not_found, unauthorized_bearer
-from domain.auth.auth_schema import LoginRequest
+from app.domain.user.user_repository import UserRepository
+from app.application.exceptions import not_found, unauthorized_bearer
+from app.domain.auth.auth_schema import LoginRequest
 
 
 class LoginUseCase:

@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends
-from domain.user.user_schema import UserResponse
+from app.domain.user.user_schema import UserResponse
 
-from application.use_cases.user.get_user import GetUserUseCase
-from application.use_cases.user.get_users import GetUsersUseCase
+from app.application.use_cases.user.get_user import GetUserUseCase
+from app.application.use_cases.user.get_users import GetUsersUseCase
 
 router = APIRouter(tags=["User"])
 

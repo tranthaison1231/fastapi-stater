@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
-from domain.post.post_schema import PostRequest, PostResponse
-from application.use_cases.post.create_post import CreatePostUseCase
-from application.use_cases.post.get_posts import GetPostsUseCase
+from app.domain.post.post_schema import PostRequest, PostResponse
+from app.application.use_cases.post.create_post import CreatePostUseCase
+from app.application.use_cases.post.get_posts import GetPostsUseCase
 
 router = APIRouter(tags=["Post"])
 

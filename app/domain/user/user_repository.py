@@ -1,6 +1,6 @@
-from domain.user.user_schema import UserRequest
-from domain.user.user_model import User
-from infrastructure.database.dependencies import db_dependency
+from app.domain.user.user_schema import UserRequest
+from app.domain.user.user_model import User
+from app.infrastructure.database.dependencies import db_dependency
 
 
 class UserRepository:

@@ -1,18 +1,25 @@
-import uvicorn
-from config import settings
+from app.presentation.rest import api_router
+from fastapi import FastAPI
+from fastapi.responses import UJSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 
-def main() -> None:
-    """Entrypoint of the application."""
-    uvicorn.run(
-        "app:get_app",
-        workers=settings.WORKERS_COUNT,
-        host=settings.HOST,
-        port=settings.PORT,
-        reload=settings.RELOAD,
-        factory=True,
-    )
+app = FastAPI(
+    title="FastAPI Starter Project",
+    description="FastAPI Starter Project",
+    version="1.0",
+    docs_url="/docs/",
+    redoc_url="/redoc/",
+    openapi_url="/openapi.json",
+    default_response_class=UJSONResponse,
+)
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-if __name__ == "__main__":
-    main()
+app.include_router(router=api_router, prefix="/api")

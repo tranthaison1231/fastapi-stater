@@ -1,5 +1,5 @@
 from fastapi import Depends
-from domain.post.post_repository import PostRepository
+from app.domain.post.post_repository import PostRepository
 
 
 class GetPostsUseCase:

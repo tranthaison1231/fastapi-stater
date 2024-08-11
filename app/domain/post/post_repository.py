@@ -1,6 +1,6 @@
-from domain.post.post_schema import PostRequest
-from domain.post.post_model import Post
-from infrastructure.database.dependencies import db_dependency
+from app.domain.post.post_schema import PostRequest
+from app.domain.post.post_model import Post
+from app.infrastructure.database.dependencies import db_dependency
 
 
 class PostRepository:
