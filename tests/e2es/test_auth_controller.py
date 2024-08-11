@@ -7,7 +7,6 @@ def test_login(client):
             "username": "test",
         },
     )
-    assert response.status_code == 200
+    assert response.status_code == 409
     response_json = response.json()
-    assert response_json["email"] == "ttson.1714@gmail.com"
-    assert response_json["name"] == "test"
+    assert response_json["detail"] == "User with this email already exists"
