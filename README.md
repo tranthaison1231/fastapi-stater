@@ -6,11 +6,12 @@ This project provides a foundational structure for building RESTful APIs using F
 
 ## Features
 
-- 🚀FastAPI: High-performance, asynchronous web framework for building APIs.
-- 🛡️Sqlalchemy: Robust ORM for interacting with databases.
-- 📘Alembic: Powerful tool for managing database schema migrations.
-- 🛠️Ruff: An extremely fast Python linter and code formatter, written in Rust.
-- 🔦Pyright: Static Type Checker for Python
+- 🚀 FastAPI: High-performance, asynchronous web framework for building APIs.
+- 🛡️ Sqlalchemy: Robust ORM for interacting with databases.
+- 📘 Alembic: Powerful tool for managing database schema migrations.
+- 🛠️ Ruff: An extremely fast Python linter and code formatter, written in Rust.
+- 🔦 Pyright: Static Type Checker for Python.
+- 💈 Pre-commit: A framework for managing and maintaining multi-language pre-commit hooks.
 
 ## Setup
 
@@ -27,6 +28,10 @@ make install
 ```bash
 make dev
 ```
+
+## Script
+
+- All necessary scripts for this project are listed in the Makefile. Please carefully review the Makefile and execute the desired script accordingly.
 
 ## Structure
 
