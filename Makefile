@@ -31,6 +31,9 @@ test:
 check-types:
 	pyright
 
+check-updates:
+	pip list --outdated	
+
 format:
 	ruff format
 
