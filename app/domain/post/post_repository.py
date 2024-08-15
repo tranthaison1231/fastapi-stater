@@ -1,4 +1,4 @@
-from app.domain.post.post_schema import PostRequest
+from app.application.dtos.post_schema import PostRequest
 from app.domain.post.post_model import Post
 from app.infrastructure.database.dependencies import db_dependency
 

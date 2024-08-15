@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends
-from app.domain.post.post_schema import PostRequest, PostResponse
+from app.application.dtos.post_schema import PostRequest, PostResponse
 from app.application.use_cases.post.create_post import CreatePostUseCase
 from app.application.use_cases.post.get_posts import GetPostsUseCase
 

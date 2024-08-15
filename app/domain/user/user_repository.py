@@ -1,4 +1,4 @@
-from app.domain.user.user_schema import UserRequest
+from app.application.dtos.user_schema import UserRequest
 from app.domain.user.user_model import User
 from app.infrastructure.database.dependencies import db_dependency
 

@@ -15,6 +15,12 @@ repos:
         args: ["check-types"]
         language: python
 
+      - id: test
+        name: Run test
+        entry: make
+        args: ["test"]
+        language: python
+
   - repo: https://github.com/compilerla/conventional-pre-commit
     rev: v2.4.0
     hooks:

@@ -1,6 +1,6 @@
 from fastapi import Depends
 from app.domain.post.post_repository import PostRepository
-from app.domain.post.post_schema import PostRequest
+from app.application.dtos.post_schema import PostRequest
 
 
 class CreatePostUseCase:

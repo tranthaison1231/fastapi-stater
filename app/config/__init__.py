@@ -7,6 +7,8 @@ class Settings(BaseSettings):
     ENV: str = "dev"
 
     DATABASE_URL: str
+    JWT_SECRET: str
+
     DB_ECHO: bool = False
 
 
