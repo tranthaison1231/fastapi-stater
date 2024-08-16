@@ -9,6 +9,11 @@ class Settings(BaseSettings):
     DATABASE_URL: str
     JWT_SECRET: str
 
+    AWS_ACCESS_KEY_ID: str
+    AWS_SECRET_ACCESS_KEY: str
+    AWS_REGION_NAME: str
+    AWS_BUCKET_NAME: str
+
     DB_ECHO: bool = False
 
 

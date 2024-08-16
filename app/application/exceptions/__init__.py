@@ -17,6 +17,13 @@ def unauthorized_bearer() -> HTTPException:
     )
 
 
+def bad_request(msg: str = "Bad request.") -> HTTPException:
+    return HTTPException(
+        status_code=status.HTTP_400_BAD_REQUEST,
+        detail=msg,
+    )
+
+
 def forbidden(
     msg: str = "You don't have permission to access this resource",
 ) -> HTTPException:
@@ -37,6 +44,13 @@ def not_found(msg: str = "Resource not found.") -> HTTPException:
 def conflict(msg: str = "Resource already exists.") -> HTTPException:
     return HTTPException(
         status_code=status.HTTP_409_CONFLICT,
+        detail=msg,
+    )
+
+
+def internal_server_error(msg: str = "Internal server error.") -> HTTPException:
+    return HTTPException(
+        status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
         detail=msg,
     )
 
