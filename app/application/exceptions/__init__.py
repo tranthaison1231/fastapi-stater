@@ -9,10 +9,12 @@ def unauthorized_basic() -> HTTPException:
     )
 
 
-def unauthorized_bearer() -> HTTPException:
+def unauthorized_bearer(
+    msg: str = "Invalid authorization credentials",
+) -> HTTPException:
     return HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
-        detail="Invalid authorization credentials",
+        detail=msg,
         headers={"WWW-Authenticate": "Bearer"},
     )
 

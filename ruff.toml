@@ -34,8 +34,8 @@ target-version = "py38"
 
 [lint]
 preview = true
-select = ["E4", "E7", "E9", "F", "N", "UP", "ANN", "ASYNC", "FAST", "PT", "Q", "ARG"]
-ignore = ["ANN201", "ANN001", "ANN101", "ANN003", "ANN002"]
+select = ["E", "F", "N", "UP", "ANN", "ASYNC", "FAST", "PT", "Q", "ARG", "RET", "SLF", "SIM", "TID", "PL"]
+ignore = ["ANN201", "ANN001", "ANN101", "ANN003", "ANN002", "ANN205", "PLR2004"]
 
 fixable = ["ALL"]
 unfixable = []

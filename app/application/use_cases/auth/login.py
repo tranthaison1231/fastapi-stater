@@ -29,4 +29,4 @@ class LoginUseCase:
 
         refresh_token = "!24"
 
-        return {"data": {"access_token": access_token, "refresh_token": refresh_token}}
+        return {"access_token": access_token, "refresh_token": refresh_token}

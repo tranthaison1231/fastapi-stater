@@ -17,6 +17,4 @@ class S3Provider(UploadProviderInterface):
     def upload(self, file: bytes, file_name: str | None):
         self.s3.upload_fileobj(file, self.bucket_name, file_name)
 
-        image_url = f"https://{self.bucket_name}.s3.amazonaws.com/{file_name}"
-
-        return image_url
+        return f"https://{self.bucket_name}.s3.amazonaws.com/{file_name}"

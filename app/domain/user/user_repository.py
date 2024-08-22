@@ -8,19 +8,13 @@ class UserRepository:
         self.db = db
 
     async def get_users(self):
-        users = self.db.query(User).all()
-
-        return users
+        return self.db.query(User).all()
 
     async def get_user_by_email(self, email: str) -> User | None:
-        user = self.db.query(User).filter(User.email == email).first()
-
-        return user
+        return self.db.query(User).filter(User.email == email).first()
 
     async def get_user(self, id: str):
-        user = self.db.query(User).filter(User.id == id).first()
-
-        return user
+        return self.db.query(User).filter(User.id == id).first()
 
     async def create_user(self, user_request: UserRequest):
         user = User(

@@ -8,6 +8,7 @@ class Settings(BaseSettings):
 
     DATABASE_URL: str
     JWT_SECRET: str
+    JWT_ALGORITHM: str = "HS256"
 
     AWS_ACCESS_KEY_ID: str
     AWS_SECRET_ACCESS_KEY: str

@@ -32,13 +32,13 @@ check-types:
 	pyright
 
 check-updates:
-	pip list --outdated	
+	pip list --outdated
 
 format:
 	ruff format
 
-dev: 
-	uvicorn app.main:app --reload 
+dev:
+	uvicorn app.main:app --reload
 
 pre-commit:
 	pre-commit run --all-files

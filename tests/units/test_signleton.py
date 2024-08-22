@@ -7,7 +7,6 @@ class MyClass:
         self.value = value
 
 
-# The singleton decorator is used to ensure that only one instance of the class is created.
 def test_singleton_behavior():
     instance1 = MyClass(10)
     instance2 = MyClass(20)

@@ -23,6 +23,4 @@ class RegisterUseCase:
             name=register_request.username,
         )
 
-        user_created = await self.user_repository.create_user(user_request)
-
-        return user_created
+        return await self.user_repository.create_user(user_request)
