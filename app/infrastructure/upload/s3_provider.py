@@ -6,7 +6,7 @@ import boto3
 class S3Provider(UploadProviderInterface):
     bucket_name = settings.AWS_BUCKET_NAME
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.s3 = boto3.client(
             "s3",
             aws_access_key_id=settings.AWS_ACCESS_KEY_ID,

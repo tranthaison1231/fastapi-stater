@@ -10,7 +10,7 @@ SUPPORTED_FILE_TYPES = {"image/jpeg": "jpeg", "image/png": "png"}
 
 
 class UploadFileUseCase:
-    def __init__(self, s3_provider: S3Provider = Depends()):
+    def __init__(self, s3_provider: S3Provider = Depends()) -> None:
         self.s3_provider = s3_provider
 
     async def excute(self, file: UploadFile):

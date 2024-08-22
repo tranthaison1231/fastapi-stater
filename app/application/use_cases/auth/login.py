@@ -10,7 +10,7 @@ class LoginUseCase:
         self,
         user_repository: UserRepository = Depends(),
         jwt_provider: JWTProvider = Depends(),
-    ):
+    ) -> None:
         self.user_repository = user_repository
         self.jwt_provider = jwt_provider
 

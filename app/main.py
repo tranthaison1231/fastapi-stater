@@ -8,7 +8,7 @@ from app.utils.signleton import singleton
 
 @singleton
 class AppCreator:
-    def __init__(self):
+    def __init__(self) -> None:
         self.app = FastAPI(
             title="FastAPI Starter Project",
             description="FastAPI Starter Project",

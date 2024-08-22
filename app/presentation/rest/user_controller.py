@@ -1,17 +1,17 @@
 from fastapi import APIRouter, Depends
 from app.application.dtos.user_schema import UserResponse
-
 from app.application.use_cases.user.get_user import GetUserUseCase
 from app.application.use_cases.user.get_users import GetUsersUseCase
+from typing import Annotated
 
 router = APIRouter(tags=["User"])
 
 
 @router.get("/", response_model=list[UserResponse])
-async def get_users(get_users_use_case: GetUsersUseCase = Depends()):
+async def get_users(get_users_use_case: Annotated[GetUsersUseCase, Depends()]):
     return await get_users_use_case.excute()
 
 
 @router.get("/{id}")
-async def get_user(id: str, get_user_use_case: GetUserUseCase = Depends()):
+async def get_user(id: str, get_user_use_case: Annotated[GetUserUseCase, Depends()]):
     return await get_user_use_case.excute(id=id)

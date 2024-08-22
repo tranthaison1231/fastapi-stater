@@ -3,7 +3,7 @@ from app.domain.post.post_repository import PostRepository
 
 
 class GetPostsUseCase:
-    def __init__(self, post_repository: PostRepository = Depends()):
+    def __init__(self, post_repository: PostRepository = Depends()) -> None:
         self.post_repository = post_repository
 
     async def excute(self):

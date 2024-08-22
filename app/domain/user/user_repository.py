@@ -4,7 +4,7 @@ from app.infrastructure.database.dependencies import db_dependency
 
 
 class UserRepository:
-    def __init__(self, db: db_dependency):
+    def __init__(self, db: db_dependency) -> None:
         self.db = db
 
     async def get_users(self):

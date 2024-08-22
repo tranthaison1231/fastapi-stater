@@ -6,7 +6,7 @@ from app.application.dtos.user_schema import UserRequest
 
 
 class RegisterUseCase:
-    def __init__(self, user_repository: UserRepository = Depends()):
+    def __init__(self, user_repository: UserRepository = Depends()) -> None:
         self.user_repository = user_repository
 
     async def excute(self, register_request: RegisterRequest):

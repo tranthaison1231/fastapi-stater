@@ -1,12 +1,13 @@
 from fastapi import APIRouter, Depends, File, UploadFile
 from app.application.use_cases.upload.upload_file import UploadFileUseCase
+from typing_extensions import Annotated
 
 router = APIRouter(tags=["Upload"])
 
 
 @router.post("/")
 async def upload(
-    file: UploadFile = File(...),
-    upload_file_use_case: UploadFileUseCase = Depends(),
+    file: Annotated[UploadFile, File(...)],
+    upload_file_use_case: Annotated[UploadFileUseCase, Depends()],
 ):
     return await upload_file_use_case.excute(file)

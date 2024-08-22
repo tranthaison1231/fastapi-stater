@@ -3,7 +3,7 @@ from app.utils.signleton import singleton
 
 @singleton
 class MyClass:
-    def __init__(self, value):
+    def __init__(self, value) -> None:
         self.value = value
 
 
