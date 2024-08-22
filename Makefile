@@ -40,5 +40,8 @@ format:
 dev: 
 	uvicorn app.main:app --reload 
 
+pre-commit:
+	pre-commit run --all-files
+
 docker-api:
 	docker-compose up api
