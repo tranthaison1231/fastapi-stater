@@ -1,8 +1,5 @@
 install:
-	pip install -r requirements/base.txt
-
-install-no-cache:
-	pip install --no-cache-dir -r requirements/base.txt
+	uv sync
 
 migration-up:
 	alembic upgrade heads

@@ -34,12 +34,33 @@ target-version = "py38"
 
 [lint]
 preview = true
-select = ["E", "F", "N", "UP", "ANN", "ASYNC", "FAST", "PT", "Q", "ARG", "RET", "SLF", "SIM", "TID", "PL"]
+select = [
+  "W",
+  "E",
+  "F",
+  "N",
+  "UP",
+  "ANN",
+  "ASYNC",
+  "FAST",
+  "S",
+  "PT",
+  "Q",
+  "ARG",
+  "RET",
+  "SLF",
+  "SIM",
+  "TID",
+  "PL"
+]
 ignore = ["ANN201", "ANN001", "ANN101", "ANN003", "ANN002", "ANN205", "PLR2004"]
 
 fixable = ["ALL"]
 unfixable = []
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[lint.per-file-ignores]
+"**/tests/*.py" = ["S101"]
 
 [format]
 quote-style = "double"

@@ -12,10 +12,16 @@ This project provides a foundational structure for building RESTful APIs using F
 - 🛠️ Ruff: An extremely fast Python linter and code formatter, written in Rust.
 - 🔦 Pyright: Static Type Checker for Python.
 - 💈 Pre-commit: A framework for managing and maintaining multi-language pre-commit hooks.
+- 🚢 UV: Python packaging in Rust
 
 ## Setup
 
 - Ensure you have Python 3 and pip installed on your system. To set up the project environment, run the following command:
+- After have pip let install uv
+
+```bash
+pip install uv
+```
 
 ```bash
 make install

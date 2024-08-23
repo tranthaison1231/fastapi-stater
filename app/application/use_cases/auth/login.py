@@ -27,6 +27,6 @@ class LoginUseCase:
 
         access_token = self.jwt_provider.create_access_token(data={"userId": user.id})
 
-        refresh_token = "!24"
+        refresh_token = "!24"  # noqa: S105
 
         return {"access_token": access_token, "refresh_token": refresh_token}
