@@ -1,5 +1,5 @@
 install:
-	uv sync
+	uv pip install -r pyproject.toml
 
 migration-up:
 	alembic upgrade heads
