@@ -2,43 +2,43 @@ install:
 	uv pip install -r pyproject.toml
 
 migration-up:
-	alembic upgrade heads
+	uv run alembic upgrade heads
 
 migration-down:
-	alembic downgrade base
+	uv run alembic downgrade base
 
 migration-create:
-	alembic revision -m "$(name)"
+	uv run alembic revision -m "$(name)"
 
 migration-history:
-	alembic history
+	uv run alembic history
 
 migration-generate:
-	alembic revision --autogenerate -m "$(name)"
+	uv run alembic revision --autogenerate -m "$(name)"
 
 lint:
-	ruff check
+	uv run ruff check
 
 lint-fix:
-	ruff check --fix
+	uv run ruff check --fix
 
 test:
-	pytest
+	uv run pytest
 
 check-types:
-	pyright
-
-check-updates:
-	pip list --outdated
+	uv run pyright
 
 format:
-	ruff format
+	uv run ruff format
 
 dev:
-	uvicorn app.main:app --reload
+	uv run uvicorn app.main:app --reload
+
+start:
+	uv run fastapi run app/main.py
 
 pre-commit:
 	pre-commit run --all-files
 
 docker-api:
-	docker-compose up api
+	docker-compose up api --build

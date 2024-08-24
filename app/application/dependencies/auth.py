@@ -1,11 +1,12 @@
 from fastapi import Request
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
+
 from app.application.exceptions import unauthorized_bearer
 from app.infrastructure.authentication.jwt_provider import JWTProvider
 
 
 class Auth(HTTPBearer):
-    def __init__(self, auto_error: bool = True) -> None:
+    def __init__(self, auto_error: bool = True) -> None:  # noqa: FBT001, FBT002
         super().__init__(auto_error=auto_error)
 
     async def __call__(self, request: Request) -> HTTPAuthorizationCredentials | None:

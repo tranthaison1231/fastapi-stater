@@ -3,6 +3,7 @@ from typing import Annotated
 from fastapi import Depends
 from fastapi.security import HTTPAuthorizationCredentials
 
+from app.application.constants import ErrorMessages
 from app.application.dependencies.auth import Auth
 from app.application.exceptions import unauthorized_bearer
 from app.domain.user.user_model import User
@@ -29,7 +30,7 @@ async def get_current_user(
     user = await user_repository.get_user(id=use_id)
 
     if not user:
-        raise unauthorized_bearer("User not found")
+        raise unauthorized_bearer(ErrorMessages.USER_NOT_FOUND)
 
     return user
 

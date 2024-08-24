@@ -1,4 +1,5 @@
 from fastapi import Depends
+
 from app.domain.post.post_repository import PostRepository
 
 

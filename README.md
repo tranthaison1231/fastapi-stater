@@ -49,3 +49,7 @@ The project follows Domain-Driven Design principles, with the following director
 - infrastructure: Manages external dependencies like databases and messaging systems.
 
 ![ddd](docs/images/ddd.png)
+
+## Repo Activity
+
+![Alt](https://repobeats.axiom.co/api/embed/18ac713f59258f2f67ae943fb5c132945e310536.svg "Repobeats analytics image")

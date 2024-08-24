@@ -1,8 +1,9 @@
 from fastapi import APIRouter, Depends
+from typing_extensions import Annotated
+
 from app.application.dtos.post_schema import PostRequest, PostResponse
 from app.application.use_cases.post.create_post import CreatePostUseCase
 from app.application.use_cases.post.get_posts import GetPostsUseCase
-from typing_extensions import Annotated
 
 router = APIRouter(tags=["Post"])
 

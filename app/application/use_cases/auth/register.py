@@ -1,8 +1,10 @@
 from fastapi import Depends
+
+from app.application.constants import ErrorMessages
 from app.application.dtos.auth_schema import RegisterRequest
-from app.domain.user.user_repository import UserRepository
-from app.application.exceptions import conflict
 from app.application.dtos.user_schema import UserRequest
+from app.application.exceptions import conflict
+from app.domain.user.user_repository import UserRepository
 
 
 class RegisterUseCase:
@@ -11,11 +13,11 @@ class RegisterUseCase:
 
     async def excute(self, register_request: RegisterRequest):
         user = await self.user_repository.get_user_by_email(
-            email=register_request.email
+            email=register_request.email,
         )
 
         if user:
-            raise conflict("User with this email already exists")
+            raise conflict(ErrorMessages.USER_ALREADY_EXISTS)
 
         user_request = UserRequest(
             email=register_request.email,

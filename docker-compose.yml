@@ -3,7 +3,6 @@ version: "3.8"
 services:
   api:
     image: fast-api:base
-    command: /bin/sh -c "chmod +x ./scripts/docker-entrypoint.sh && ./scripts/docker-entrypoint.sh"
     working_dir: /app
     build:
       dockerfile: docker/Dockerfile.local

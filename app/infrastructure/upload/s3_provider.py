@@ -1,6 +1,7 @@
+import boto3
+
 from app.config import settings
 from app.infrastructure.upload.abstract import UploadProviderInterface
-import boto3
 
 
 class S3Provider(UploadProviderInterface):

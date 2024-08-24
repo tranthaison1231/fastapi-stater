@@ -1,7 +1,9 @@
 from fastapi import Depends
+
+from app.application.constants import ErrorMessages
 from app.application.dtos.auth_schema import LoginRequest
-from app.domain.user.user_repository import UserRepository
 from app.application.exceptions import not_found, unauthorized_bearer
+from app.domain.user.user_repository import UserRepository
 from app.infrastructure.authentication.jwt_provider import JWTProvider
 
 
@@ -18,7 +20,7 @@ class LoginUseCase:
         user = await self.user_repository.get_user_by_email(email=login_request.email)
 
         if not user:
-            raise not_found("User not found")
+            raise not_found(ErrorMessages.USER_NOT_FOUND)
 
         is_password_valid = user.check_password(password=login_request.password)
 

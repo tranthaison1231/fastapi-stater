@@ -1,4 +1,5 @@
 from fastapi import Depends
+
 from app.domain.user.user_repository import UserRepository
 
 

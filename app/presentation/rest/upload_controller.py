@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, File, UploadFile
-from app.application.use_cases.upload.upload_file import UploadFileUseCase
 from typing_extensions import Annotated
+
+from app.application.use_cases.upload.upload_file import UploadFileUseCase
 
 router = APIRouter(tags=["Upload"])
 
