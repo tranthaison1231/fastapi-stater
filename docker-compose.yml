@@ -3,11 +3,10 @@ version: "3.8"
 services:
   api:
     image: fast-api:base
-    working_dir: /app
+    working_dir: /base-api
     build:
       dockerfile: docker/Dockerfile.local
     ports:
       - 8000:8000
-
-volumes:
-  db_data:
+    volumes:
+      - ./app:/base-api/app

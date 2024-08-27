@@ -41,4 +41,7 @@ pre-commit:
 	pre-commit run --all-files
 
 docker-api:
-	docker-compose up api --build
+	docker-compose up api 
+
+docker-api-restart:
+	docker-compose up api --build 
