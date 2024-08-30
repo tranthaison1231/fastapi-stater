@@ -7,8 +7,8 @@ from app.application.constants import ErrorMessages
 from app.application.dependencies.auth import Auth
 from app.application.exceptions import unauthorized_bearer
 from app.domain.user.user_model import User
-from app.domain.user.user_repository import UserRepository
 from app.infrastructure.authentication.jwt_provider import JWTProvider
+from app.infrastructure.database.repositories.user_repository import UserRepository
 
 
 async def get_current_user(

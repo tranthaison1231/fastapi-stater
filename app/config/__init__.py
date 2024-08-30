@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     AWS_REGION_NAME: str
     AWS_BUCKET_NAME: str
 
-    DB_ECHO: bool = False
+    DB_ECHO: bool = True
 
 
 settings = Settings()  # type: ignore

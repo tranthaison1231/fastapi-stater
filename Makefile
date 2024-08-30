@@ -1,3 +1,6 @@
+outdated:
+	pip list --outdated
+
 install:
 	uv pip install -r pyproject.toml
 
@@ -41,7 +44,7 @@ pre-commit:
 	pre-commit run --all-files
 
 docker-api:
-	docker-compose up api 
+	docker-compose up api
 
 docker-api-restart:
-	docker-compose up api --build 
+	docker-compose up api --build

@@ -3,8 +3,8 @@ from fastapi import Depends
 from app.application.constants import ErrorMessages
 from app.application.dtos.auth_schema import LoginRequest
 from app.application.exceptions import not_found, unauthorized_bearer
-from app.domain.user.user_repository import UserRepository
 from app.infrastructure.authentication.jwt_provider import JWTProvider
+from app.infrastructure.database.repositories.user_repository import UserRepository
 
 
 class LoginUseCase:
