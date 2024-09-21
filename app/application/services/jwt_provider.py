@@ -2,7 +2,7 @@ import time
 
 from jose import JWTError, jwt
 
-from app.config import settings
+from app.core.config import settings
 
 
 class JWTProvider:

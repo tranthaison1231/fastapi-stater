@@ -1,4 +1,4 @@
-from app.utils.signleton import singleton
+from app.core.utils.signleton import singleton
 
 
 @singleton

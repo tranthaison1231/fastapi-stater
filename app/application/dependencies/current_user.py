@@ -6,8 +6,8 @@ from fastapi.security import HTTPAuthorizationCredentials
 from app.application.constants import ErrorMessages
 from app.application.dependencies.auth import Auth
 from app.application.exceptions import unauthorized_bearer
+from app.application.services.jwt_provider import JWTProvider
 from app.domain.user.user_model import User
-from app.infrastructure.authentication.jwt_provider import JWTProvider
 from app.infrastructure.database.repositories.user_repository import UserRepository
 
 

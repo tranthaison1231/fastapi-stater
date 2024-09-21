@@ -278,13 +278,13 @@ requires-dist = [
     { name = "pre-commit", specifier = ">=3.8.0" },
     { name = "psycopg2-binary", specifier = ">=2.9.9" },
     { name = "pydantic-settings", specifier = ">=2.4.0" },
-    { name = "pyright", specifier = ">=1.1.377" },
+    { name = "pyright", specifier = ">=1.1.381" },
     { name = "pytest", specifier = ">=8.3.2" },
     { name = "python-dotenv", specifier = ">=1.0.1" },
     { name = "python-jose", specifier = ">=3.3.0" },
     { name = "python-magic", specifier = ">=0.4.27" },
     { name = "python-multipart", specifier = ">=0.0.9" },
-    { name = "ruff", specifier = ">=0.6.3" },
+    { name = "ruff", specifier = ">=0.6.6" },
     { name = "s3transfer", specifier = ">=0.10.2" },
     { name = "sqlalchemy", specifier = ">=2.0.32" },
     { name = "sqlmodel", specifier = ">=0.0.21" },
@@ -624,14 +624,14 @@ wheels = [
 
 [[package]]
 name = "pyright"
-version = "1.1.377"
+version = "1.1.381"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "nodeenv" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/49/f0/25b0db363d6888164adb7c828b877bbf2c30936955fb9513922ae03e70e4/pyright-1.1.377.tar.gz", hash = "sha256:aabc30fedce0ded34baa0c49b24f10e68f4bfc8f68ae7f3d175c4b0f256b4fcf", size = 17484 }
+sdist = { url = "https://files.pythonhosted.org/packages/10/f4/8e2374423280cfb221a8eba3cb13d39276a05e592fea36bc06d5feb18c33/pyright-1.1.381.tar.gz", hash = "sha256:314cf0c1351c189524fb10c7ac20688ecd470e8cc505c394d642c9c80bf7c3a5", size = 17488 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/34/c9/89c40c4de44fe9463e77dddd0c4e2d2dd7a93e8ddc6858dfe7d5f75d263d/pyright-1.1.377-py3-none-any.whl", hash = "sha256:af0dd2b6b636c383a6569a083f8c5a8748ae4dcde5df7914b3f3f267e14dd162", size = 18223 },
+    { url = "https://files.pythonhosted.org/packages/2f/c0/fec7607edc2459816c49815cd5dac67b28c702ed497102118cdc2757cc8d/pyright-1.1.381-py3-none-any.whl", hash = "sha256:5dc0aa80a265675d36abab59c674ae01dbe476714f91845b61b841d34aa99081", size = 18221 },
 ]
 
 [[package]]

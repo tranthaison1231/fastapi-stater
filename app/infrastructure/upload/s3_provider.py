@@ -1,6 +1,6 @@
 import boto3
 
-from app.config import settings
+from app.core.config import settings
 from app.infrastructure.upload.abstract import UploadProviderInterface
 
 

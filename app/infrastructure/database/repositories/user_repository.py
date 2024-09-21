@@ -1,9 +1,10 @@
-from app.application.dtos.user_schema import UserRequest
+from app.domain.user.user_interface import UserRepositoryInterface
 from app.domain.user.user_model import User
+from app.domain.user.user_schema import UserRequest
 from app.infrastructure.database.dependencies import db_dependency
 
 
-class UserRepository:
+class UserRepository(UserRepositoryInterface):
     def __init__(self, db: db_dependency) -> None:
         self.db = db
 

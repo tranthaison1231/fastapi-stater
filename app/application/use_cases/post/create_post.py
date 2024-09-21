@@ -1,6 +1,6 @@
 from fastapi import Depends
 
-from app.application.dtos.post_schema import PostRequest
+from app.domain.post.post_schema import PostRequest
 from app.infrastructure.database.repositories.post_repository import PostRepository
 
 

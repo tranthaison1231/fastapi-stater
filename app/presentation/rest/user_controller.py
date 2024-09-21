@@ -2,10 +2,10 @@ from typing import Annotated
 
 from fastapi import APIRouter, Depends
 
-from app.application.dtos.user_schema import UserResponse
 from app.application.use_cases.user.get_me import GetMeUseCase
 from app.application.use_cases.user.get_user import GetUserUseCase
 from app.application.use_cases.user.get_users import GetUsersUseCase
+from app.domain.user.user_schema import UserResponse
 
 router = APIRouter(tags=["User"])
 

@@ -47,6 +47,7 @@ The project follows Domain-Driven Design principles, with the following director
 - application: Orchestrates business logic, coordinates domain objects
 - domain: Defines the domain model and business entities.
 - infrastructure: Manages external dependencies like databases and messaging systems.
+- core: Contains shared utilitie, constants, configurations, and other cross-cutting concerns.
 
 ![ddd](docs/images/ddd.png)
 

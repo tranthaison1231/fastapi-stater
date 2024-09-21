@@ -2,8 +2,8 @@ from fastapi import Depends
 
 from app.application.constants import ErrorMessages
 from app.application.dtos.auth_schema import RegisterRequest
-from app.application.dtos.user_schema import UserRequest
 from app.application.exceptions import conflict
+from app.domain.user.user_schema import UserRequest
 from app.infrastructure.database.repositories.user_repository import UserRepository
 
 

@@ -55,7 +55,9 @@ ignore = [
   "ANN003",
   "ANN002",
   "ANN205",
-  "PLR2004"
+  "PLR2004",
+  "COM812",
+  "ISC001"
 ]
 
 fixable = ["ALL"]

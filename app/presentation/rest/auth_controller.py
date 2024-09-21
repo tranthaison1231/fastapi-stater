@@ -2,9 +2,9 @@ from fastapi import APIRouter, Depends, status
 from typing_extensions import Annotated
 
 from app.application.dtos.auth_schema import LoginRequest, RegisterRequest
-from app.application.dtos.user_schema import UserResponse
 from app.application.use_cases.auth.login import LoginUseCase
 from app.application.use_cases.auth.register import RegisterUseCase
+from app.domain.user.user_schema import UserResponse
 
 router = APIRouter(tags=["Auth"])
 

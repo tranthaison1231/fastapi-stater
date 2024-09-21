@@ -2,8 +2,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import UJSONResponse
 
+from app.core.utils.signleton import singleton
 from app.presentation.rest import api_router
-from app.utils.signleton import singleton
 
 
 @singleton

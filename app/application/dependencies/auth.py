@@ -2,7 +2,7 @@ from fastapi import Request
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 
 from app.application.exceptions import unauthorized_bearer
-from app.infrastructure.authentication.jwt_provider import JWTProvider
+from app.application.services.jwt_provider import JWTProvider
 
 
 class Auth(HTTPBearer):
