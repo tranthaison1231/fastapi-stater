@@ -1,14 +1,12 @@
-from fastapi import Depends
-
 from app.application.constants import ErrorMessages
 from app.application.dtos.auth_schema import RegisterRequest
 from app.application.exceptions import conflict
+from app.domain.user.user_abstract import UserRepositoryInterface
 from app.domain.user.user_schema import UserRequest
-from app.infrastructure.database.repositories.user_repository import UserRepository
 
 
 class RegisterUseCase:
-    def __init__(self, user_repository: UserRepository = Depends()) -> None:
+    def __init__(self, user_repository: UserRepositoryInterface) -> None:
         self.user_repository = user_repository
 
     async def excute(self, register_request: RegisterRequest):

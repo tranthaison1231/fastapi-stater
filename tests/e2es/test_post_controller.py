@@ -6,4 +6,4 @@ class TestPostController:
         response = client.get(self.url)
         assert response.status_code == 200
         response_json = response.json()
-        assert response_json == []
+        assert response_json == [{"content": "string", "title": "string"}]

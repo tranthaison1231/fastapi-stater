@@ -1,11 +1,9 @@
-from fastapi import Depends
-
+from app.domain.post.post_abstract import PostRepositoryInterface
 from app.domain.post.post_schema import PostRequest
-from app.infrastructure.database.repositories.post_repository import PostRepository
 
 
 class CreatePostUseCase:
-    def __init__(self, post_repository: PostRepository = Depends()) -> None:
+    def __init__(self, post_repository: PostRepositoryInterface) -> None:
         self.post_repository = post_repository
 
     async def excute(self, post_request: PostRequest):

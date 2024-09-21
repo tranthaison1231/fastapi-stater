@@ -1,4 +1,4 @@
-from app.domain.user.user_interface import UserRepositoryInterface
+from app.domain.user.user_abstract import UserRepositoryInterface
 from app.domain.user.user_model import User
 from app.domain.user.user_schema import UserRequest
 from app.infrastructure.database.dependencies import db_dependency

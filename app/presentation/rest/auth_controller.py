@@ -5,6 +5,7 @@ from app.application.dtos.auth_schema import LoginRequest, RegisterRequest
 from app.application.use_cases.auth.login import LoginUseCase
 from app.application.use_cases.auth.register import RegisterUseCase
 from app.domain.user.user_schema import UserResponse
+from app.infrastructure.database.repositories.user_repository import UserRepository
 
 router = APIRouter(tags=["Auth"])
 
@@ -12,8 +13,9 @@ router = APIRouter(tags=["Auth"])
 @router.post("/login")
 async def login(
     login_request: LoginRequest,
-    login_use_case: Annotated[LoginUseCase, Depends()],
+    user_repository: Annotated[UserRepository, Depends()],
 ):
+    login_use_case = LoginUseCase(user_repository)
     return await login_use_case.excute(login_request)
 
 
@@ -24,6 +26,7 @@ async def login(
 )
 async def register(
     register_request: RegisterRequest,
-    register_use_case: Annotated[RegisterUseCase, Depends()],
+    user_repository: Annotated[UserRepository, Depends()],
 ):
+    register_use_case = RegisterUseCase(user_repository)
     return await register_use_case.excute(register_request)

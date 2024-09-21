@@ -1,4 +1,4 @@
-from app.domain.post.post_interface import PostRepositoryInterface
+from app.domain.post.post_abstract import PostRepositoryInterface
 from app.domain.post.post_model import Post
 from app.domain.post.post_schema import PostRequest
 from app.infrastructure.database.dependencies import db_dependency

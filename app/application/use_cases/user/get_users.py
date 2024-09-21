@@ -1,10 +1,8 @@
-from fastapi import Depends
-
-from app.infrastructure.database.repositories.user_repository import UserRepository
+from app.domain.user.user_abstract import UserRepositoryInterface
 
 
 class GetUsersUseCase:
-    def __init__(self, user_repository: UserRepository = Depends()) -> None:
+    def __init__(self, user_repository: UserRepositoryInterface) -> None:
         self.user_repository = user_repository
 
     async def excute(self):
